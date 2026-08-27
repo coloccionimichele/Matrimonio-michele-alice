@@ -1,36 +1,70 @@
 
 /* ==========================================
-   MATRIMONIO ALICE & MICHELE
-   STYLE.CSS
+   PALETTE MATRIMONIO
 ========================================== */
 
 :root{
 
-    --background:#F8F2EC;
-    --white:#FFFDFB;
+    --avorio: #FBECD6;
 
-    --gold:#B98B4D;
-    --gold-dark:#8F6834;
+    --testo: #302E2A;
 
-    --terracotta:#C7795B;
-    --apricot:#E8AE82;
-    --champagne:#EADBC7;
-    --sage:#87907B;
+    --tramonto: #EF8743;
 
-    --text:#4A403A;
-    --text-light:#7E736A;
+    --azzurro: #8393A1;
 
-    --border:#E7D8C6;
+    --azzurro-chiaro: #A1B4C7;
 
-    --shadow:0 20px 60px rgba(120,70,40,.12);
-
-    --radius:20px;
-
-    --transition:.35s ease;
-
-    --max-width:1200px;
+    --bianco: #ffffff;
 
 }
+
+/* ==========================================
+   MATRIMONIO ALICE & MICHELE
+   STYLE.CSS
+========================================== */
+
+/* ==========================================
+   1. PALETTE
+========================================== */
+
+:root{
+
+    /* Palette Tramonto */
+
+    --avorio:#F8F3EB;
+
+    --azzurro-chiarissimo:#E7EEF4;
+    --azzurro-polvere:#D5E1EB;
+    --cielo-sera:#AFC5D8;
+
+    --pesca:#FFD9C8;
+    --albicocca:#FFB88E;
+    --terracotta:#DA8B6E;
+
+
+    /* Testi */
+
+    --testo:#354A5D;
+    --testo-chiaro:#7A8895;
+
+    /* Alias */
+
+    --primary:var(--terracotta);
+    --secondary:var(--cielo-sera);
+
+    --background:var(--avorio);
+    --card:#FFFFFF;
+
+    --radius:22px;
+    --shadow:0 12px 30px rgba(53,74,93,.08);
+--transition: .35s ease;
+    --border:rgba(218,139,110,.18);
+
+}
+/* ==========================================
+   2. RESET
+========================================== */
 
 *{
     margin:0;
@@ -39,95 +73,55 @@
 }
 
 html{
-
     scroll-behavior:smooth;
-
 }
 
 body{
+    margin:0;
+    padding:0;
 
-    background:var(--background);
+    background-color:#FBECD6;
+    background-image:url("img/sfondo-acquerello.webp");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
 
-    color:var(--text);
-
+    color:#302E2A;
     font-family:"Poppins",sans-serif;
-
-    line-height:1.8;
-
-    overflow-x:hidden;
-
 }
 
 img{
-
     width:100%;
-
     display:block;
-
 }
 
 a{
-
     text-decoration:none;
-
     color:inherit;
-
 }
 
 ul{
-
     list-style:none;
-
 }
 
 .container{
-
-    width:min(92%,var(--max-width));
-
+    width:min(92%,1300px);
     margin:auto;
-
 }
 
 .narrow{
-
     max-width:850px;
-
     margin:auto;
-
 }
 
 .center{
-
     text-align:center;
-
 }
 
 .section{
-
+    position:relative;
     padding:110px 0;
-
-}
-
-.light{
-
-    background:white;
-
-}
-
-.section-title{
-
-    display:block;
-
-    color:var(--gold);
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    font-size:.85rem;
-
-    margin-bottom:20px;
-
 }
 
 .section h2{
@@ -142,33 +136,65 @@ ul{
 
 }
 
+.section-title{
+
+    display:block;
+
+    color:var(--terracotta);
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    font-size:.85rem;
+
+    margin-bottom:20px;
+
+}
+
 .section-description{
 
     max-width:700px;
 
     margin:auto;
 
-    color:var(--text-light);
+    color:var(--testo-chiaro);
 
 }
 
-/* ==========================
+/* ==========================================
+   SFONDI
+========================================== */
+
+.light{
+
+    background:linear-gradient(
+        to bottom,
+        var(--avorio) 0%,
+        var(--azzurro-chiarissimo) 12%,
+        var(--azzurro-chiarissimo) 100%
+    );
+
+}
+
+/* ==========================================
    HEADER
-========================== */
+========================================== */
 
 .header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid #eee;
+    background:rgba(248,243,235,.95); /* Avorio */
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--azzurro-polvere);
     z-index:1000;
+    transition:.3s;
 }
 
 .nav-container{
-    max-width:1300px;
+    width:min(92%,1300px);
     margin:auto;
     height:90px;
 
@@ -186,22 +212,26 @@ ul{
 .menu{
     display:flex;
     gap:35px;
-    list-style:none;
 }
 
 .menu a{
-    text-decoration:none;
-    color:#31465B;
+    color:var(--testo);
+
     font-size:.9rem;
     font-weight:500;
+
     letter-spacing:.08em;
     text-transform:uppercase;
+
+    transition:color .3s ease;
 }
 
 .menu a:hover{
-    color:#C9A15B;
+    color:var(--terracotta);
 }
+
 @media(max-width:900px){
+
     .menu{
         display:none;
     }
@@ -209,6 +239,83 @@ ul{
     .nav-container{
         justify-content:center;
     }
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:120px 20px 80px;
+
+    background:transparent;
+
+    position:relative;
+
+}
+
+.hero-content{
+    max-width:700px;
+    margin:0 auto;
+}
+
+.hero-date{
+    letter-spacing:4px;
+    font-size:14px;
+    text-transform:uppercase;
+    color:var(--terracotta);
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:68px;
+    font-weight:400;
+    color:var(--testo);
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.8;
+    color:var(--testo-chiaro);
+    margin-bottom:25px;
+}
+
+.hero-location{
+    margin:30px 0;
+}
+
+.hero-location li{
+    margin:10px 0;
+    font-size:1.05rem;
+}
+
+.hero-button{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 36px;
+    border:1px solid var(--terracotta);
+    color:var(--terracotta);
+    border-radius:30px;
+    transition:.35s ease;
+}
+
+.hero-button:hover{
+    background:var(--terracotta);
+    color:#fff;
 }
 
 /* ==========================================
@@ -328,6 +435,7 @@ ul{
 
 }
 
+
 /* ==========================================
    LOCATION
 ========================================== */
@@ -346,6 +454,7 @@ ul{
 
 .location-card{
 
+
     background:white;
 
     padding:50px;
@@ -354,7 +463,10 @@ ul{
 
     text-align:center;
 
-    box-shadow:var(--shadow);
+    background: var(--card);
+border: 1px solid rgba(217,133,103,0.18);
+border-radius: 22px;
+box-shadow: 0 12px 30px rgba(53,74,93,0.08);
 
     border:1px solid var(--border);
 
@@ -419,9 +531,9 @@ ul{
 
     padding:14px 30px;
 
-    border:2px solid var(--gold);
+    border:2px solid var(--albicocca);
 
-    color:var(--gold-dark);
+    color:var(--terracotta);
 
     border-radius:50px;
 
@@ -447,9 +559,10 @@ ul{
 .countdown{
 
     padding:60px 20px 90px;
-
-    background:#F8F2EC;
-
+background:transparent;  
+    var(--albicocca) 0%,
+    var(--terracotta) 100%
+);
     text-align:center;
 
 }
@@ -712,6 +825,11 @@ ul{
 
 }
 
+#lista-nozze{
+    position:relative;
+}
+
+
 /* ==========================================
    RSVP
 ========================================== */
@@ -728,7 +846,7 @@ ul{
 
 }
 
-.rsvp-form input,
+.rsvp-form input:not([type="checkbox"]):not([type="radio"]),
 .rsvp-form textarea,
 .rsvp-form select{
 
@@ -749,7 +867,55 @@ ul{
     transition:.3s;
 
 }
+.form-section{
+    margin:50px 0;
+}
 
+.form-section h3{
+    margin-bottom:10px;
+    font-size:1.5rem;
+}
+
+.form-section p{
+    margin-bottom:25px;
+    color:var(--testo-chiaro);
+}
+
+.diet-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+    margin-bottom:25px;
+}
+
+.diet-card{
+    display:block;
+    cursor:pointer;
+}
+
+.diet-card input{
+    display:none;
+}
+
+.diet-box{
+    padding:18px 22px;
+    background:#fff;
+    border:2px solid var(--azzurro-polvere);
+    border-radius:16px;
+    transition:.3s;
+    font-size:16px;
+}
+
+.diet-card:hover .diet-box{
+    border-color:var(--terracotta);
+    transform:translateY(-2px);
+}
+
+.diet-card input:checked + .diet-box{
+    background:#DA8B6E;
+    color:white;
+    border-color:#DA8B6E;
+}
 .rsvp-form input:focus,
 .rsvp-form textarea:focus,
 .rsvp-form select:focus{
@@ -765,6 +931,11 @@ textarea{
     resize:vertical;
 
 }
+
+/* ==========================================
+   TRANSIZIONE RSVP → FAQ
+========================================== */
+
 
 /* ==========================================
    FAQ
@@ -806,7 +977,7 @@ textarea{
 
     margin-top:18px;
 
-    color:var(--text-light);
+    color:var(--testo-chiaro);
 
 }
 
@@ -905,13 +1076,11 @@ textarea{
 @media(max-width:900px){
 
     .hero h1{
-
         font-size:4rem;
 
     }
 
     .section h2{
-
         font-size:2.5rem;
 
     }
@@ -968,188 +1137,103 @@ textarea{
 
     }
 
-    .section{
+ }
 
-        padding:80px 0;
 
-    }
+/* ==========================================
+   SFONDI DELLE SEZIONI
+========================================== */
 
-}
-/* ANIMAZIONI */
 
-.hero{
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:120px 20px 80px;
-    background:#f7eff2;
-}
+/* ==========================================
+   SFONDO SEZIONE STORIA
+========================================== */
 
-.hero-content{
-    max-width:700px;
-    margin:0 auto;
-}
 
-.hero-date{
-    letter-spacing:4px;
-    font-size:14px;
-    text-transform:uppercase;
-    color:#9b7d84;
-    margin-bottom:20px;
+/* ==========================================
+   LA NOSTRA STORIA
+========================================== */
+
+#storia{
+    background:transparent;
+        var(--pesca) 0%,
+        var(--pesca) 45%,
+        var(--albicocca) 100%
+    );
 }
 
-.hero h1{
-    font-family:"Cormorant Garamond", serif;
-    font-size:68px;
-    font-weight:400;
-    margin-bottom:25px;
+#giornata{
+    background:transparent;
+        var(--terracotta) 0%,
+        var(--terracotta) 40%,
+        var(--cielo-sera) 100%
+    );
+}
+#location{
+    background:transparent;
+        var(--cielo-sera) 0%,
+        var(--azzurro-polvere) 100%
+    );
+}
+#gallery{
+   background:transparent;
+        var(--azzurro-polvere) 0%,
+        var(--azzurro-chiarissimo) 100%
+    );
 }
 
-.hero p{
-    font-size:20px;
-    line-height:1.8;
-    margin-bottom:20px;
+#lista-nozze{
+    background:transparent;
+        var(--azzurro-chiarissimo) 0%,
+        var(--cielo-sera) 100%
+    );
 }
 
-.hero-location{
-    list-style:none;
-    padding:0;
-    margin:30px 0;
+#rsvp{
+    background:transparent;
+        var(--cielo-sera) 0%,
+        var(--testo) 100%
+    );
 }
 
-.hero-location li{
-    margin:10px 0;
-}
+.success-message{
 
-.hero-button{
-    display:inline-block;
-    margin-top:25px;
-    padding:14px 36px;
-    border:1px solid #b68a94;
-    color:#b68a94;
-    text-decoration:none;
-    border-radius:30px;
-    transition:.3s;
-}
+    position:fixed;
 
-.hero-button:hover{
-    background:#b68a94;
+    bottom:30px;
+
+    right:30px;
+
+    background:#4CAF50;
+
     color:white;
-}
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+    padding:16px 22px;
 
-/* ===========================
-   COUNTDOWN
-=========================== */
+    border-radius:12px;
 
-.countdown-section{
+    font-weight:600;
 
-    background:#F9F5EF;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
 
-    padding:120px 20px;
+    opacity:0;
 
-    text-align:center;
+    transform:translateY(20px);
+
+    transition:.35s;
+
+    pointer-events:none;
+
+    z-index:99999;
 
 }
 
-.section-title h2{
+.success-message.show{
 
-    font-family:"Cormorant Garamond",serif;
+    opacity:1;
 
-    font-size:3rem;
-
-    color:#31465B;
-
-    margin-bottom:20px;
+    transform:translateY(0);
 
 }
 
-.gold-line{
-
-    width:90px;
-
-    height:3px;
-
-    background:#C9A15B;
-
-    margin:0 auto 60px;
-
-    border-radius:20px;
-
-}
-
-.countdown-box{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:35px;
-
-    flex-wrap:wrap;
-
-}
-
-.time-box{
-
-    width:150px;
-
-    padding:30px 15px;
-
-    background:white;
-
-    border-radius:24px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-}
-
-.time-box span{
-
-    display:block;
-
-    font-size:3rem;
-
-    font-weight:700;
-
-    color:#31465B;
-
-}
-
-.time-box small{
-
-    display:block;
-
-    margin-top:10px;
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-
-    color:#C9A15B;
-
-}
-
-.countdown-text{
-
-    margin-top:50px;
-
-    font-size:1.2rem;
-
-    color:#5F6B75;
-
-    font-style:italic;
-
-}
+   

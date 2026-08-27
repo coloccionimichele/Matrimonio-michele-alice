@@ -201,7 +201,7 @@
 
 </section>
 
-<section id="location" class="section light">
+<section id="location" class="section">
 
     <div class="container">
 
@@ -282,7 +282,7 @@
 
  
 
-<section id="gallery" class="section light">
+<section id="gallery" class="section">
 
     <div class="container">
 
@@ -338,9 +338,16 @@
 
         </p>
 
+<div class="iban-box">
+    ...
+</div>
+
         <div class="gift-card">
 
             <h3>Coordinate Bancarie</h3>
+<p class="beneficiario-label">Beneficiario</p>
+<p class="beneficiario-nome"><strong>Alice Frisoni e Michele Coloccioni</strong></p>
+
 
             <p class="iban" id="iban">
 
@@ -362,7 +369,7 @@
 
 </section>
 
-<section id="rsvp" class="section light">
+<section id="rsvp" class="section">
 
     <div class="container narrow">
 
@@ -385,64 +392,134 @@
 
         </p>
 
-        <form class="rsvp-form">
+<form class="rsvp-form" id="rsvpForm">
+<input
+    type="text"
+    id="nome"
+    name="nome"
+    placeholder="Nome e Cognome"
+    required>
 
-            <input
-                type="text"
-                placeholder="Nome e Cognome"
-                required>
+<input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Email">
 
-            <input
-                type="email"
-                placeholder="Email">
+<select id="partecipazione" name="partecipazione" required>
+    <option value="">Parteciperò?</option>
+    <option value="si">Con piacere ❤️</option>
+    <option value="no">Purtroppo no</option>
+</select>
 
-            <select required>
+<input
+    type="number"
+    id="invitati"
+    name="invitati"
+    min="1"
+    value="1"
+    placeholder="Numero invitati">
 
-                <option value="">
+<!-- ESIGENZE ALIMENTARI -->
 
-                    Parteciperò?
+<div class="form-section">
 
-                </option>
+    <h3>🍽️ Esigenze alimentari</h3>
 
-                <option>
+    <p>
+        Se tu o uno dei tuoi accompagnatori avete esigenze particolari,
+        selezionatele qui sotto.
+    </p>
 
-                    Con piacere
+<label for="dieta">
+    Seleziona un'opzione
+</label>
 
-                </option>
+<select id="dieta" name="dieta">
 
-                <option>
+    <option value="">Nessuna esigenza alimentare</option>
 
-                    Purtroppo no
+    <option value="Celiachia">Celiachia</option>
 
-                </option>
+    <option value="Intolleranza al lattosio">Intolleranza al lattosio</option>
 
-            </select>
+    <option value="Vegetariano">Vegetariano</option>
 
-            <input
-                type="number"
-                min="1"
-                value="1"
-                placeholder="Numero invitati">
+    <option value="Vegano">Vegano</option>
 
-            <textarea
-                rows="5"
-                placeholder="Allergie, intolleranze o messaggi..."></textarea>
+    <option value="Altre allergie o intolleranze">
+        Altre allergie o intolleranze
+    </option>
 
-            <button
-                type="submit"
-                class="btn-primary">
+</select>
 
-                Invia conferma
+<div id="campo-allergie" style="display:none;">
 
-            </button>
+    <label for="allergie">
+        Specifica eventuali allergie o intolleranze
+    </label>
 
+    <textarea
+        id="allergie"
+        name="allergie"
+        rows="4"
+        placeholder="Scrivi qui eventuali allergie o intolleranze...">
+    </textarea>
+
+</div>   
+</div>
+
+<!-- BAMBINI -->
+
+<div class="form-section">
+
+    <h3>👶 Bambini</h3>
+
+    <p>
+        Saranno presenti bambini?
+    </p>
+
+    <select name="bambini">
+        <option value="">Seleziona</option>
+        <option>Sì</option>
+        <option>No</option>
+    </select>
+
+    <input
+        type="number"
+        name="numero-bambini"
+        min="0"
+        placeholder="Numero bambini">
+
+    <select name="menu-bambini">
+        <option value="">Menù bambini?</option>
+        <option>Sì</option>
+        <option>No</option>
+    </select>
+
+</div>
+
+<textarea
+    name="messaggio"
+    rows="5"
+    placeholder="Lasciaci un messaggio (facoltativo)..."></textarea>
+
+<button id="submitBtn" class="btn-primary" type="submit">
+    
+    Invia conferma
+</button>
+
+<div id="successMessage" class="success-message">
+    ✅ Conferma inviata con successo!
+</div>
+           
         </form>
 
     </div>
 
 </section>
 
-<section class="section">
+<section class="section bg-ivory">
 
     <div class="container">
 

@@ -1236,4 +1236,24 @@ textarea{
 
 }
 
+/* Pulsante foto matrimonio */
+.btn-foto {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #8393A1;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn-foto:hover {
+    background: #302E2A;
+    transform: translateY(-2px);
+}
    

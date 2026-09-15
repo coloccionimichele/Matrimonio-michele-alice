@@ -326,17 +326,45 @@
 
 <div style="text-align:center; margin-top:35px;">
 
-    <a
-        href="https://script.google.com/macros/s/AKfycbxhbF_glxKGU8-f7lzWzzdVXsmuduT66TJatcZykr4H9mAH_n2pv5FEZC6kKhQwLH_XfQ/exec"
-        target="_blank"
+    <button
+        type="button"
         class="btn-foto"
+        onclick="apriWedShoots()"
         style="font-size:18px; padding:18px 40px; min-width:320px;"
     >
-        📸 Condividi le foto del matrimonio
-    </a>
+        📱 Scarica WedShoots
+    </button>
+
+    <div style="margin-top:25px;">
+
+        <p style="margin-bottom:10px;">
+            Dopo aver installato l'app, entra nel nostro album
+            utilizzando questo codice:
+        </p>
+
+        <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap;">
+
+            <strong
+                id="codiceWedShoots"
+                style="font-size:22px; letter-spacing:2px;"
+            >
+                ITbb0f97df
+            </strong>
+
+            <button
+                type="button"
+                onclick="copiaCodiceWedShoots()"
+                class="btn-foto"
+                style="padding:10px 18px;"
+            >
+                📋 Copia
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
-
 </section>
 
 <section id="lista-nozze" class="section">

@@ -320,4 +320,47 @@ submitBtn.innerHTML = "Invia conferma";
 
     });
 
+   /* ========= WEDSHOOTS ========= */
+
+function apriWedShoots() {
+
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    const linkApple = "https://apps.apple.com/it/app/wedshoots/id660256196";
+    const linkAndroid = "https://play.google.com/store/apps/details?hl=it&id=net.bodas.android.wedshoots";
+
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+
+        window.open(linkApple, "_blank");
+
+    } else if (/android/i.test(userAgent)) {
+
+        window.open(linkAndroid, "_blank");
+
+    } else {
+
+        // Computer o altro dispositivo:
+        window.open(linkApple, "_blank");
+
+    }
+
+}
+
+
+function copiaCodiceWedShoots() {
+
+    const codice = "ITbb0f97df";
+
+    navigator.clipboard.writeText(codice).then(function() {
+
+        alert("Codice copiato: " + codice);
+
+    }).catch(function() {
+
+        alert("Il codice è: " + codice);
+
+    });
+
+}
+
 }

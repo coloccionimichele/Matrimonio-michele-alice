@@ -346,21 +346,40 @@ function apriWedShoots() {
 
 }
 
-
 function copiaCodiceWedShoots() {
 
     const codice = "ITbb0f97df";
 
     navigator.clipboard.writeText(codice).then(function() {
 
-        alert("Codice copiato: " + codice);
+        const messaggio = document.getElementById(
+            "messaggioCodiceWedShoots"
+        );
+
+        if (messaggio) {
+
+            messaggio.style.display = "inline";
+
+            setTimeout(function() {
+                messaggio.style.display = "none";
+            }, 2500);
+
+        }
 
     }).catch(function() {
 
-        alert("Il codice è: " + codice);
+        const messaggio = document.getElementById(
+            "messaggioCodiceWedShoots"
+        );
+
+        if (messaggio) {
+            messaggio.textContent = "Codice: " + codice;
+            messaggio.style.display = "inline";
+        }
 
     });
 
 }
+
 
 }
